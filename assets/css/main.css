@@ -65,11 +65,11 @@ h1,h2,h3{color:#ece3cb}
 #dropSearchDropDownButton:hover, #dropSearchDropDownButton.dropSearchDropped {color:#ECE3CB;background:#27231E url('img/red_gradient.png') repeat-x left top;cursor:pointer;}
 
 .quality_normal {color: #B2B2B2;}
-.quality_unusual, .quality_rarity4 {color: #8650AC;}
+.quality_unusual {color: #8650AC;}
 .quality_vintage {color: #476291;}                           
 .quality_unique {color: #FFD700;}
 .quality_community {color: #70B04A;}
-.quality_valve, .quality_developer {color: #A50F79;}
+.quality_valve {color: #A50F79;}
 .quality_selfmade {color: #70B04A;}
 .quality_customized {color: #476291;}
 .quality_genuine {color: #4D7455;}

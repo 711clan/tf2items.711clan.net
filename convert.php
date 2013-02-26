@@ -1,0 +1,113 @@
+<?php  
+
+define('ALLOW_INCLUDE', 1);
+require 'system/includes/config.php';
+include 'system/includes/CServerInfo.php';
+
+$item_definitions=array("#TF_Weapon_Bat"=>"0","#TF_Weapon_Bottle"=>"1","#TF_Weapon_FireAxe"=>"2","#TF_Weapon_Club"=>"3","#TF_Weapon_Knife"=>"4","#TF_Weapon_Fists"=>"5","#TF_Weapon_Shovel"=>"6","#TF_Weapon_Wrench"=>"7","#TF_Weapon_Bonesaw"=>"8","#TF_Weapon_Shotgun"=>"9","#TF_Weapon_Shotgun"=>"10","#TF_Weapon_Shotgun"=>"11","#TF_Weapon_Shotgun"=>"12","#TF_Weapon_Scattergun"=>"13","#TF_Weapon_SniperRifle"=>"14","#TF_Weapon_Minigun"=>"15","#TF_Weapon_SMG"=>"16","#TF_Weapon_SyringeGun"=>"17","#TF_Weapon_RocketLauncher"=>"18","#TF_Weapon_GrenadeLauncher"=>"19","#TF_Weapon_PipebombLauncher"=>"20","#TF_Weapon_FlameThrower"=>"21","#TF_Weapon_Pistol"=>"22","#TF_Weapon_Pistol"=>"23","#TF_Weapon_Revolver"=>"24","#TF_Weapon_PDA_Engineer"=>"25","#TF_Weapon_PDA_Engineer"=>"26","#TF_Weapon_PDA_Engineer"=>"27","#TF_Weapon_PDA_Engineer"=>"28","#TF_Weapon_Medigun"=>"29","#TF_Weapon_Watch"=>"30","#TF_Unique_Achievement_Medigun1"=>"35","#TF_Unique_Achievement_Syringegun1"=>"36","#TF_Unique_Achievement_Bonesaw1"=>"37","#TF_Unique_Achievement_FireAxe1"=>"38","#TF_Unique_Achievement_Flaregun"=>"39","#TF_Unique_Achievement_Flamethrower"=>"40","#TF_Unique_Achievement_Minigun"=>"41","#TF_Unique_Achievement_LunchBox"=>"42","#TF_Unique_Achievement_Fists"=>"43","#TF_Unique_Achievement_Bat"=>"44","#TF_Unique_Achievement_Scattergun_Double"=>"45","#TF_Unique_Achievement_EnergyDrink"=>"46","#TF_Demo_Hat_1"=>"47","#TF_Engineer_Hat_1"=>"48","#TF_Heavy_Hat_1"=>"49","#TF_Medic_Hat_1"=>"50","#TF_Pyro_Hat_1"=>"51","#TF_Scout_Hat_1"=>"52","#TF_Sniper_Hat_1"=>"53","#TF_Soldier_Hat_1"=>"54","#TF_Spy_Hat_1"=>"55","#TF_Unique_Achievement_CompoundBow"=>"56","#TF_Unique_Backstab_Shield"=>"57","#TF_Unique_Achievement_Jar"=>"58","#TF_Unique_Achievement_FeignWatch"=>"59","#TF_Unique_Achievement_CloakWatch"=>"60","#TF_Unique_Achievement_Revolver"=>"61","#TF_Engineer_Cowboy_Hat"=>"94","#TF_Engineer_Train_Hat"=>"95","#TF_Heavy_Ushanka_Hat"=>"96","#TF_Heavy_Stocking_cap"=>"97","#TF_Soldier_Pot_Hat"=>"98","#TF_Soldier_Viking_Hat"=>"99","#TF_Demo_Scott_Hat"=>"100","#TF_Medic_Tyrolean_Hat"=>"101","#TF_Pyro_Chicken_Hat"=>"102","#TF_Spy_Camera_Beard"=>"103","#TF_Medic_Mirror_Hat"=>"104","#TF_Pyro_Fireman_Helmet"=>"105","#TF_Scout_Bonk_Helmet"=>"106","#TF_Scout_Newsboy_Cap"=>"107","#TF_Spy_Derby_Hat"=>"108","#TF_Sniper_Straw_Hat"=>"109","#TF_Sniper_Jarate_Headband"=>"110","#TF_Hatless_Scout"=>"111","#TF_Halloween_Hat"=>"115","#TF_Domination_Hat"=>"116","#TF_Hatless_Sniper"=>"117","#TF_Hatless_Engineer"=>"118","#TF_Demo_Top_Hat"=>"120","#TF_Soldier_Medal_Web_Sleuth"=>"121","#TF_CheatDetectedMinor"=>"122","#TF_CheatDetectedMajor"=>"123","#TF_HonestyReward"=>"124","#TF_HonestyHalo"=>"125","#TF_L4DHat"=>"126","#TF_Unique_Achievement_RocketLauncher"=>"127","#TF_Unique_Achievement_Pickaxe"=>"128","#TF_Unique_Achievement_SoldierBuff"=>"129","#TF_Unique_Achievement_StickyLauncher"=>"130","#TF_Unique_Achievement_Shield"=>"131","#TF_Unique_Achievement_Sword"=>"132","#TF_Unique_Blast_Boots"=>"133","#TF_PropagandaContest_FirstPlace"=>"134","#TF_ToweringPillar_Hat"=>"135","#TF_PropagandaContest_SecondPlace"=>"136","#TF_NobleAmassment_Hat"=>"137","#TF_PropagandaContest_ThirdPlace"=>"138","#TF_ModestPile_Hat"=>"139","#TF_Unique_Achievement_Laser_Pointer"=>"140","#TF_Unique_Sentry_Shotgun"=>"141","#TF_Unique_Robot_Arm"=>"142","#TF_OSXItem"=>"143","#TF_MedicMask"=>"144","#TF_HeavyHair"=>"145","#TF_DemomanHallmark"=>"146","#TF_SpyNobleHair"=>"147","#TF_EngineerWeldingMask"=>"148","#TF_ScoutBeanie"=>"150","#TF_PyroBrainSucker"=>"151","#TF_SoldierSamurai"=>"152","#TF_Unique_SledgeHammer"=>"153","#TF_Unique_Makeshiftclub"=>"154","#TF_Unique_Combat_Wrench"=>"155","#TF_SniperPithHelmet"=>"158","#TF_Unique_Lunchbox_Chocolate"=>"159","#TF_TTG_MaxGun"=>"160","#TF_TTG_SamRevolver"=>"161","#TF_TTG_MaxsHat"=>"162","#TF_Unique_EnergyDrink_CritCola"=>"163","#TF_Employee_Badge_A"=>"164","#TF_Employee_Badge_B"=>"165","#TF_Employee_Badge_C"=>"166","#TF_Unique_Golden_Wrench"=>"169","#TF_Employee_Badge_Plat"=>"170","#TF_Unique_TribalmanKukri"=>"171","#TF_Unique_BattleAxe"=>"172","#TF_Unique_BattleSaw"=>"173","#TF_ScoutWhoopee"=>"174","#TF_PyroMonocle"=>"175","#TF_MedicGoggles"=>"177","#TF_EngineerEarmuffs"=>"178","#TF_DemomanTricorne"=>"179","#TF_SpyBeret"=>"180","#TF_SniperFishingHat"=>"181","#TF_PyroHelm"=>"182","#TF_SoldierDrillHat"=>"183","#TF_MedicGatsby"=>"184","#TF_HeavyDorag"=>"185","#TF_Parasite_Hat"=>"189","#TF_Weapon_Bat"=>"190","#TF_Weapon_Bottle"=>"191","#TF_Weapon_FireAxe"=>"192","#TF_Weapon_Club"=>"193","#TF_Weapon_Knife"=>"194","#TF_Weapon_Fists"=>"195","#TF_Weapon_Shovel"=>"196","#TF_Weapon_Wrench"=>"197","#TF_Weapon_Bonesaw"=>"198","#TF_Weapon_Shotgun"=>"199","#TF_Weapon_Scattergun"=>"200","#TF_Weapon_SniperRifle"=>"201","#TF_Weapon_Minigun"=>"202","#TF_Weapon_SMG"=>"203","#TF_Weapon_SyringeGun"=>"204","#TF_Weapon_RocketLauncher"=>"205","#TF_Weapon_GrenadeLauncher"=>"206","#TF_Weapon_PipebombLauncher"=>"207","#TF_Weapon_FlameThrower"=>"208","#TF_Weapon_Pistol"=>"209","#TF_Weapon_Revolver"=>"210","#TF_Weapon_Medigun"=>"211","#TF_Weapon_Watch"=>"212","#TF_TheAttendant"=>"213","#TF_ThePowerjack"=>"214","#TF_TheDegreaser"=>"215","#TF_DemomanPirate"=>"216","#TF_TheMilkman"=>"219","#TF_TheShortstop"=>"220","#TF_TheHolyMackerel"=>"221","#TF_MadMilk"=>"222","#TF_TheFamiliarFez"=>"223","#TF_LEtranger"=>"224","#TF_EternalReward"=>"225","#TF_TheBattalionsBackup"=>"226","#TF_TheGrenadiersSoftcap"=>"227","#TF_TheBlackBox"=>"228","#TF_OlSnaggletooth"=>"229","#TF_SydneySleeper"=>"230","#TF_DarwinsDangerShield"=>"231","#TF_TheBushwacka"=>"232","#TF_Gift_RandomPerson"=>"233","#TF_Gift_EntireServer"=>"234","#TF_Weapon_RocketLauncher_Jump"=>"237","#TF_Unique_Gloves_of_Running_Urgently"=>"239","#TF_Worms_Gear"=>"240","#TF_Usable_Duel"=>"241","#TF_Duel_Medal_Bronze"=>"242","#TF_Duel_Medal_Silver"=>"243","#TF_Duel_Medal_Gold"=>"244","#TF_Duel_Medal_Plat"=>"245","#TF_HeavyPugilistProtector"=>"246","#TF_PyroFiestaSombrero"=>"247","#TF_PyroBeanie"=>"248","#TF_ScoutBombingRun"=>"249","#TF_SoldierChiefRocketeer"=>"250","#TF_SoldierShako"=>"251","#TF_Seuss"=>"252","#TF_PyroPlunger"=>"253","#TF_HeavyUmbrella"=>"254","#TF_DemoStuntHelmet"=>"255","#TF_DemoInquisitor"=>"259","#TF_WikiCap"=>"260","#TF_MannCoCap"=>"261","#TF_Polycount_Pin"=>"262","#TF_EllisHat"=>"263","#TF_Unique_FryingPan"=>"264","#TF_Weapon_StickyBomb_Jump"=>"265","#TF_HalloweenBoss_Axe"=>"266","#TF_Haunted_Metal"=>"267","#TF_Halloween_Mask_Scout"=>"268","#TF_Halloween_Mask_Sniper"=>"269","#TF_Halloween_Mask_Soldier"=>"270","#TF_Halloween_Mask_Demoman"=>"271","#TF_Halloween_Mask_Medic"=>"272","#TF_Halloween_Mask_Heavy"=>"273","#TF_Halloween_Mask_Spy"=>"274","#TF_Halloween_Mask_Engineer"=>"275","#TF_Halloween_Mask_Pyro"=>"276","#TF_Halloween_Mask_SaxtonHale"=>"277","#TF_Halloween_Head"=>"278","#TF_Domination_Hat_2010"=>"279","#TF_NoiseMaker_BlackCat"=>"280","#TF_NoiseMaker_Gremlin"=>"281","#TF_NoiseMaker_Werewolf"=>"282","#TF_NoiseMaker_Witch"=>"283","#TF_NoiseMaker_Banshee"=>"284","#TF_NoiseMaker_CrazyLaugh"=>"286","#TF_Halloween_Skullcap"=>"287","#TF_NoiseMaker_Stabby"=>"288","#TF_Halloween_Voodoo"=>"289","#TF_Cadavers_Cranium"=>"290","#TF_Horrific_Headsplitter"=>"291","#TF_TTG_PokerVisor"=>"292","#TF_TTG_MaxGun"=>"294","#TF_TTG_Glasses"=>"295","#TF_TTG_Badge"=>"296","#TF_TTG_Watch"=>"297","#TF_Iron_Curtain"=>"298","#TF_Portal2_Pin"=>"299","#TF_CameraHelm"=>"302","#TF_BerlinersBucketHelm"=>"303","#TF_Amputator"=>"304","#TF_CrusadersCrossbow"=>"305","#TF_ScotchBonnet"=>"306","#TF_UllapoolCaber"=>"307","#TF_LochNLoad"=>"308","#TF_BigChief"=>"309","#TF_WarriorsSpirit"=>"310","#TF_BuffaloSteak"=>"311","#TF_GatlingGun"=>"312","#TF_MagnificentMongolian"=>"313","#TF_LarrikinRobin"=>"314","#TF_BlightedBeak"=>"315","#TF_PyromancersMask"=>"316","#TF_CandyCane"=>"317","#TF_PrancersPride"=>"318","#TF_DetectiveNoir"=>"319","#TF_MadameDixie"=>"321","#TF_BuckaroosHat"=>"322","#TF_GermanGonzila"=>"323","#TF_FlippedTrilby"=>"324","#TF_BostonBasher"=>"325","#TF_BackScratcher"=>"326","#TF_Claidheamohmor"=>"327","#TF_Jag"=>"329","#TF_CoupeDisaster"=>"330","#TF_FistsOfSteel"=>"331","#TF_TreasureHat_1"=>"332","#TF_TreasureHat_2"=>"333","#TF_TreasureHat_3"=>"334","#TF_KF_Pyro_Mask"=>"335","#TF_KF_Pyro_Tie"=>"336","#TF_PartyPhantom"=>"337","#TF_ColoredLights"=>"338","#TF_ExquisiteRack"=>"339","#TF_DefiantSpartan"=>"340","#TF_FestiveTree"=>"341","#TF_TavishCrown"=>"342","#TF_HelpedNewUserHat"=>"343","#TF_CrocLeather_Slouch"=>"344","#TF_MNC_Hat"=>"345","#TF_MNC_Mascot_Hat"=>"346","#TF_MNC_Mascot_Outfit"=>"347","#TF_Unique_RiftFireAxe"=>"348","#TF_Unique_RiftFireMace"=>"349","#TF_Weapon_Flaregun_Detonator"=>"351","#TF_SoldierSashimono"=>"354","#TF_Gunbai"=>"355","#TF_Kunai"=>"356","#TF_SoldierKatana"=>"357","#TF_HeavyTopknot"=>"358","#TF_DemoKabuto"=>"359","#TF_Homefront_Blindfold"=>"360","#TF_SpyOniMask"=>"361","#TF_NoiseMaker_Charity_Bell"=>"362","#TF_MedicGeishaHair"=>"363","#TF_NoiseMaker_Charity_Tingsha"=>"364","#TF_NoiseMaker_Shogun"=>"365","#TF_HottiesHoodie"=>"377","#TF_TeamCaptain"=>"378","#TF_EngineerTopHat"=>"379","#TF_LargeLuchadore"=>"380","#TF_MountainCap"=>"381","#TF_BigCountry"=>"382","#TF_GrimmHatte"=>"383","#TF_ProfessorHair"=>"384","#TF_TeddyRoosebelt"=>"386","#TF_SoreEyes"=>"387","#TF_Private_Eye"=>"388","#TF_GooglyGazer"=>"389","#TF_Reggaelator"=>"390","#TF_HonchosHeadgear"=>"391","#TF_PocketMedic"=>"392","#TF_VillainsVeil"=>"393","#TF_Connoisseurs_Cap"=>"394","#TF_FuriousFukaamigasa"=>"395","#TF_Charmers_Chapeau"=>"397","#TF_Doctors_Sack"=>"398","#TF_Ol_Geezer"=>"399","#TF_DesertMarauder"=>"400","#TF_Shahanshah"=>"401","#TF_BazaarBargain"=>"402","#TF_SultansCeremonial"=>"403","#TF_PersianPersuader"=>"404","#TF_Ali_Babas_Wee_Booties"=>"405","#TF_SplendidScreen"=>"406","#TF_CharityHat_A"=>"408","#TF_CharityHat_B"=>"409","#TF_CharityHat_C"=>"410","#TF_Unique_MediGun_QuickFix"=>"411","#TF_Overdose"=>"412","#TF_SolemnVow"=>"413","#TF_LibertyLauncher"=>"414","#TF_ReserveShooter"=>"415","#TF_MarketGardener"=>"416","#TF_JumpersJeepcap"=>"417","#TF_PotatoHat"=>"420","#TF_Resurrection_Associate_Pin"=>"422","#TF_Saxxy"=>"423","#TF_Tomislav"=>"424","#TF_RussianRiot"=>"425","#TF_EvictionNotice"=>"426","#TF_CaponesCapper"=>"427","#TF_SpaceChem_MoustachiumBar"=>"429","#TF_SpaceChem_FishcakeFragment"=>"430","#TF_SpaceChem_PinFragment"=>"431","#TF_SpaceChem_Pin"=>"432","#TF_SpaceChem_Fishcake"=>"433","#TF_BucketHat"=>"434","#TF_TrafficCone"=>"435","#TF_PolishWarBabushka"=>"436","#TF_JanissaryHat"=>"437","#TF_TauntEnabler_Replay"=>"438","#TF_LordCockswainPith"=>"439","#TF_LordCockswainChops"=>"440","#TF_CowMangler"=>"441","#TF_RighteousBison"=>"442","#TF_DrGrordbortBadge"=>"443","#TF_Mantreads"=>"444","#TF_ArmoredAuthority"=>"445","#TF_FancyDressUniform"=>"446","#TF_DisciplinaryAction"=>"447","#TF_SodaPopper"=>"448","#TF_Winger"=>"449","#TF_Atomizer"=>"450","#TF_BonkBoy"=>"451","#TF_ScoutSword"=>"452","#TF_ScoutHair"=>"453","#TF_ScoutMedallion"=>"454","#TF_Mailbox"=>"457","#TF_CosaNostraCap"=>"459","#TF_Enforcer"=>"460","#TF_BigEarner"=>"461","#TF_MadeMan"=>"462","#TF_TauntEnabler_Laugh"=>"463","#TF_ConjurersCowl"=>"465","#TF_RFAHammer"=>"466","#TF_MedicMtGHat"=>"467","#TF_ScoutMtGHat"=>"468","#TF_TowerHardhat"=>"470","#TF_LoyaltyReward"=>"471","#TF_Trial_UpgradeItem"=>"472","#TF_SpiralSallet"=>"473","#TF_TauntEnabler_MedicHeroicPose"=>"477","#TF_CopHelmet"=>"478","#TF_CopGlasses"=>"479","#TF_TamOShanter"=>"480","#TF_StatelySteelToe"=>"481","#TF_NineIron"=>"482","#TF_RoguesColRoule"=>"483","#TF_HeelBiters"=>"484","#TF_SteelJaw"=>"485","#TF_Summer_Shades"=>"486","#TF_Scout_FlipFlops"=>"490","#TF_Scout_Towels"=>"491","#TF_SummerHat"=>"492","#TF_NoiseMaker_Fireworks"=>"493","#TF_TournamentMedal_GWJ_1st"=>"496","#TF_TournamentMedal_GWJ_2nd"=>"497","#TF_TournamentMedal_GWJ_3rd"=>"498","#TF_TournamentMedal_ETF2LHL_1st"=>"499","#TF_TournamentMedal_ETF2LHL_2nd"=>"500","#TF_TournamentMedal_ETF2LHL_3rd"=>"501","#TF_TournamentMedal_ETF2LHL_4th"=>"502","#TF_TournamentMedal_UGCHL_Participant"=>"503","#TF_TournamentMedal_UGCHLDiv1_1st"=>"504","#TF_TournamentMedal_UGCHLDiv1_2nd"=>"505","#TF_TournamentMedal_UGCHLDiv1_3rd"=>"506","#TF_TournamentMedal_UGCHLDiv2_1st"=>"507","#TF_TournamentMedal_UGCHLDiv2_2nd"=>"508","#TF_TournamentMedal_UGCHLDiv2_3rd"=>"509","#TF_TournamentMedal_UGCHLDiv3_1st"=>"510","#TF_TournamentMedal_UGCHLDiv3_2nd"=>"511","#TF_TournamentMedal_UGCHLDiv3_3rd"=>"512","#TF_TheOriginal"=>"513","#TF_MaskOfTheShaman"=>"514","#TF_Pilotka"=>"515","#TF_RO_SoldierHelmet"=>"516","#TF_DragonbornHelmet"=>"517","#TF_BrinkHood"=>"518","#TF_Pipboy"=>"519","#TF_Wingstick"=>"520","#TF_DEX_Helmet"=>"521","#TF_DEX_Glasses"=>"522","#TF_DEX_Hat"=>"523","#TF_DEX_Arm"=>"524","#TF_DEX_Revolver"=>"525","#TF_DEX_Rifle"=>"526","#TF_DEX_Shotgun"=>"527","#TF_DEX_Pistol"=>"528","#TF_Clockwerk_Hat"=>"533","#TF_DotaSniper_Hat"=>"534","#TF_Stormspirit_Hat"=>"535","#TF_NoiseMaker_TFBirthday"=>"536","#TF_Birthday2011_Hat"=>"537","#TF_Tropico4_Hat"=>"539","#TF_WorldTraveler"=>"1899","#TF_MapToken_Egypt"=>"1900","#TF_MapToken_Coldfront"=>"1901","#TF_MapToken_Fastlane"=>"1902","#TF_MapToken_Turbine"=>"1903","#TF_MapToken_Steel"=>"1904","#TF_MapToken_Junction"=>"1905","#TF_MapToken_Watchtower"=>"1906","#TF_MapToken_Hoodoo"=>"1907","#TF_MapToken_Offblast"=>"1908","#TF_MapToken_Yukon"=>"1909","#TF_MapToken_Harvest"=>"1910","#TF_MapToken_Freight"=>"1911","#TF_MapToken_MountainLab"=>"1912","#TF_MapToken_ManorEvent"=>"1913","#TF_MapToken_Nightfall"=>"1914","#TF_MapToken_Frontier"=>"1915","#TF_MapToken_Lakeside"=>"1916","#TF_Bundle_PolycountPyro"=>"2000","#TF_Bundle_PolycountSpy"=>"2001","#TF_Bundle_PolycountSoldier"=>"2002","#TF_Bundle_PolycountSniper"=>"2003","#TF_Bundle_PolycountScout"=>"2004","#TF_Bundle_Polycount"=>"2005","#TF_Bundle_HalloweenNoiseMaker"=>"2006","#TF_Bundle_MapTokens"=>"2007","#TF_Bundle_MedievalMedic"=>"2008","#TF_Bundle_HibernatingBear"=>"2009","#TF_Bundle_ExpertsOrdnance"=>"2010","#TF_Bundle_WinterUpdate"=>"2011","#TF_Bundle_FancyHats"=>"2012","#TF_Bundle_ExcessiveBundle"=>"2013","#TF_Bundle_NastyWeapons"=>"2014","#TF_Bundle_MapTokens"=>"2015","#TF_Bundle_ShogunPromoComplete"=>"2016","#TF_Bundle_JapanCharity"=>"2017","#TF_Bundle_ScoutStarter"=>"2018","#TF_Bundle_SoldierStarter"=>"2019","#TF_Bundle_PyroStarter"=>"2020","#TF_Bundle_DemomanStarter"=>"2021","#TF_Bundle_HeavyStarter"=>"2022","#TF_Bundle_EngineerStarter"=>"2023","#TF_Bundle_MedicStarter"=>"2024","#TF_Bundle_SniperStarter"=>"2025","#TF_Bundle_SpyStarter"=>"2026","#TF_Bundle_MobsterMonday"=>"2028","#TF_Bundle_TimbukTuesday"=>"2029","#TF_Bundle_WarWednesday"=>"2030","#TF_Bundle_MeetTheMedic"=>"2031","#TF_Bundle_Uber"=>"2032","#TF_Bundle_Summer2011"=>"2033","#TF_Bundle_DrGrordbortVictoryPack"=>"2034","#TF_Bundle_DrGComicCon"=>"2035","Bethesda Employee Bundle"=>"2036","Tripwire Employee Bundle"=>"2037","Bethesda Employee Bundle"=>"2038","Tripwire Employee Bundle"=>"2039","#TF_Bundle_DeusExPromo"=>"2040","#TF_Bundle_DeusExPAX"=>"2041","#TF_Bundle_DOTA2GamescomWinnersFinals"=>"2042","#TF_Bundle_DOTA2GamescomLosersFinals"=>"2043","#TF_Bundle_DOTA2GamescomChampionship"=>"2044","#TF_Bundle_DeusExSelfMade"=>"2045","#TF_Bundle_ShogunPromoComplete"=>"2046","#TF_Bundle_DeusExContest"=>"2048","#CI_Bar_A"=>"5000","#CI_Bar_B"=>"5001","#CI_Bar_C"=>"5002","#CI_T_C_1"=>"5003","#CI_T_C_2"=>"5004","#CI_T_C_3"=>"5005","#CI_T_C_4"=>"5006","#CI_T_C_5"=>"5007","#CI_T_C_6"=>"5008","#CI_T_C_7"=>"5009","#CI_T_C_8"=>"5010","#CI_T_C_9"=>"5011","#CI_T_S_1"=>"5012","#CI_T_S_2"=>"5013","#CI_T_S_3"=>"5014","#CI_T_S_7"=>"5018","#TF_T_Nt"=>"5020","#TF_Tool_DecoderRing"=>"5021","#TF_SupplyCrate"=>"5022","#TF_Tool_PaintCan"=>"5023","#TF_Tool_PaintCan_1"=>"5027","#TF_Tool_PaintCan_2"=>"5028","#TF_Tool_PaintCan_3"=>"5029","#TF_Tool_PaintCan_4"=>"5030","#TF_Tool_PaintCan_5"=>"5031","#TF_Tool_PaintCan_6"=>"5032","#TF_Tool_PaintCan_7"=>"5033","#TF_Tool_PaintCan_8"=>"5034","#TF_Tool_PaintCan_9"=>"5035","#TF_Tool_PaintCan_10"=>"5036","#TF_Tool_PaintCan_11"=>"5037","#TF_Tool_PaintCan_12"=>"5038","#TF_Tool_PaintCan_13"=>"5039","#TF_Tool_PaintCan_14"=>"5040","#TF_SupplyCrate"=>"5041","#TF_Tool_GiftWrap"=>"5042","#TF_Tool_Gift"=>"5043","#TF_T_Dt"=>"5044","#TF_SupplyCrate"=>"5045","#TF_Tool_PaintCan_TeamColor"=>"5046","#TF_WinterCrate"=>"5048","#TF_Tool_DecoderRing"=>"5049","#TF_Tool_BackpackExpander"=>"5050","#TF_Tool_PaintCan_15"=>"5051","#TF_Tool_PaintCan_16"=>"5052","#TF_Tool_PaintCan_17"=>"5053","#TF_Tool_PaintCan_18"=>"5054","#TF_Tool_PaintCan_19"=>"5055","#TF_Tool_PaintCan_20"=>"5056","#TF_Tool_ChristmasKey2010"=>"5057","#TF_Tool_PaintCan_TeamColor2"=>"5060","#TF_Tool_PaintCan_TeamColor3"=>"5061","#TF_Tool_PaintCan_TeamColor4"=>"5062","#TF_Tool_PaintCan_TeamColor5"=>"5063","#TF_Tool_PaintCan_TeamColor6"=>"5064","#TF_Tool_PaintCan_TeamColor7"=>"5065","#TF_SummerCrate"=>"5066","#TF_Tool_DecoderRing"=>"5067","#TF_RIFT_SpiderHat_ClaimCode"=>"5500");
+
+mysql_query("DELETE FROM log WHERE item = ''") or die(mysql_error());
+
+mysql_query("CREATE TABLE IF NOT EXISTS `itemlogger2_finds` (`id` int(11) unsigned NOT NULL AUTO_INCREMENT,`player_id` int(11) unsigned NOT NULL DEFAULT '0',`server_id` int(11) unsigned NOT NULL DEFAULT '0',`player_count` tinyint(3) unsigned NOT NULL DEFAULT '0',`item_index` int(11) NOT NULL DEFAULT '0' COMMENT 'signed int, 32 bit',`method` tinyint(2) NOT NULL DEFAULT '0',`quality` tinyint(2) NOT NULL DEFAULT '0',`time` int(11) unsigned NOT NULL DEFAULT '0',PRIMARY KEY (`id`),KEY `actual_time` (`time`)) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;") or die(mysql_error());
+mysql_query("CREATE TABLE IF NOT EXISTS `itemlogger2_items` (`id` int(11) unsigned NOT NULL DEFAULT '0',`item_name` tinytext,`proper_name` tinyint(1) DEFAULT NULL,`item_slot` varchar(16) DEFAULT NULL,`image_url` tinytext,`material_type` varchar(16) DEFAULT NULL,PRIMARY KEY (`id`)) ENGINE=MyISAM DEFAULT CHARSET=utf8;") or die(mysql_error());
+mysql_query("CREATE TABLE IF NOT EXISTS `itemlogger2_players` (`id` int(11) unsigned NOT NULL AUTO_INCREMENT,`steam_id` varchar(25) NOT NULL DEFAULT '',`name` varchar(32) DEFAULT NULL,`avatar` tinytext,`avatar_last_updated` int(11) DEFAULT NULL,PRIMARY KEY (`id`),UNIQUE KEY `steam_id` (`steam_id`)) ENGINE=MyISAM DEFAULT CHARSET=utf8;") or die(mysql_error());
+mysql_query("CREATE TABLE IF NOT EXISTS `itemlogger2_qualities` (`id` tinyint(3) unsigned NOT NULL,`name` varchar(32) DEFAULT '0',`raw_name` varchar(32) DEFAULT '0',PRIMARY KEY (`id`)) ENGINE=MyISAM DEFAULT CHARSET=utf8;") or die(mysql_error());
+mysql_query("CREATE TABLE IF NOT EXISTS `itemlogger2_servers` (`id` int(11) unsigned NOT NULL AUTO_INCREMENT,`ip` varchar(16) DEFAULT '127.0.0.1',`port` smallint(5) unsigned DEFAULT '27015',`name` tinytext,PRIMARY KEY (`id`),UNIQUE KEY `ip_port` (`ip`,`port`)) ENGINE=MyISAM DEFAULT CHARSET=utf8;") or die(mysql_error());
+
+$players_result = mysql_query('SELECT steam_id, name, avatar FROM log GROUP BY steam_id ORDER BY `id` ASC') or die(mysql_error());
+
+$players_query = "INSERT IGNORE INTO `itemlogger2_players` (`steam_id`, `name`, `avatar`)";
+mysql_query('TRUNCATE `itemlogger2_players`') or die(mysql_error()); 
+$i = 0;
+
+while($players_row = mysql_fetch_assoc($players_result))
+{
+    if($i == 0)
+    {
+        $players_query .= " VALUES ('".mysql_real_escape_string($players_row['steam_id'])."', '".mysql_real_escape_string($players_row['name'])."', '".mysql_real_escape_string($players_row['avatar'])."')";
+        $i++;
+    }
+    else
+    {
+        $players_query .= ", ('".mysql_real_escape_string($players_row['steam_id'])."', '".mysql_real_escape_string($players_row['name'])."', '".mysql_real_escape_string($players_row['avatar'])."')";   
+        $i++;
+    }
+    $players[$players_row['steam_id']] = $i;  
+}
+mysql_query($players_query) or die(mysql_error());
+
+unset($players_query);
+unset($players_result);
+unset($players_row);
+
+
+//Convert Servers
+$servers_result = mysql_query('SELECT DISTINCT server from log');
+mysql_query('TRUNCATE `itemlogger2_servers`') or die(mysql_error());     
+$servers_query = "INSERT IGNORE INTO `itemlogger2_servers` (`ip`, `port`, `name`)";
+
+$i = 0;
+
+while($servers_row = mysql_fetch_assoc($servers_result))
+{
+    $server_details = explode(':', $servers_row['server'] );
+    
+    $cServerInfo = new CServerInfo($server_details[0], $server_details[1]);
+    $server_info = $cServerInfo->getInfo();
+    
+    if($i == 0)
+    {
+        $servers_query .= " VALUES ('".mysql_real_escape_string($server_details[0])."', '".mysql_real_escape_string($server_details[1])."', '".mysql_real_escape_string($server_info['hostname'])."')";
+        $i++;
+    }
+    else
+    {
+        $servers_query .= ", ('".mysql_real_escape_string($server_details[0])."', '".mysql_real_escape_string($server_details[1])."', '".mysql_real_escape_string($server_info['hostname'])."')";    
+        $i++; 
+    }
+    $servers[$servers_row['server']] = $i;
+    unset($server_info);
+    unset($server_details);   
+}
+
+mysql_query($servers_query) or die(mysql_error());
+
+unset($cServerInfo);
+unset($servers_query);
+
+$i = 0;
+mysql_query('TRUNCATE `itemlogger2_finds`') or die(mysql_error());
+     
+while(true)
+{
+    $finds_result = mysql_query('SELECT `steam_id`, `time`, `players`, `item`, `method`, `quality`, `server` FROM log ORDER BY id ASC LIMIT '.(1000*$i).', 1000');
+    if(mysql_num_rows($finds_result) == 0)
+    {
+        break;
+    }
+    $i++;
+    
+    $finds_query = "INSERT IGNORE INTO itemlogger2_finds (`player_id`, `server_id`, `player_count`, `item_index`, `method`, `quality`, `time`)";  
+    $j=0;
+    
+    while($finds_row = mysql_fetch_assoc($finds_result))
+    {
+        if($j == 0)
+        {
+            $finds_query .= " VALUES ( '". $players[$finds_row['steam_id']] ."', '".$servers[$finds_row['server']]."', '".$finds_row['players']."', '".$item_definitions[$finds_row['item']]."', '".$finds_row['method']."', '".$finds_row['quality']."', '".$finds_row['time']."')";  
+            $j++;
+        }
+        else
+        {
+            $finds_query .= ", ( '". $players[$finds_row['steam_id']] ."', '".$servers[$finds_row['server']]."', '".$finds_row['players']."', '".$item_definitions[$finds_row['item']]."', '".$finds_row['method']."', '".$finds_row['quality']."', '".$finds_row['time']."')";      
+        }
+        unset($finds_row);  
+    }
+    mysql_query($finds_query) or die(mysql_error());
+    unset($finds_query);
+    unset($finds_result);
+        
+}
+
+echo "Script finished successfully - Please delete this script and the 'log' table and then run the updater script.";
+    

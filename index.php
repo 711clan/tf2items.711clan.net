@@ -1,9 +1,9 @@
 <?php
-/*if(file_exists('update.php'))
+if(file_exists('update.php'))
 {
     echo "Please delete update.php! (After running it!)";
     exit;
-}*/
+}
 if(file_exists('convert.php'))
 {
     echo "Please delete convert.php! (After running it!)";

@@ -54,7 +54,7 @@ $output = <<<EOT
     <thead>
         <tr>
             <th colspan="1">Name</th>
-            <th>Steam ID</th>
+            <th>Player Count</th>
             <th>Time</th>
             <th colspan="2">Item</th>
         </tr>
@@ -96,11 +96,11 @@ while($mysql_row = mysql_fetch_assoc($mysql_result))
             <!--
             <td class="player_avatar"><a href="http://steamcommunity.com/profiles/{$friend_id}"><img src="{$mysql_row['avatar']}" alt="Steam Avatar for {$mysql_row['name']}" /></a></td>
             -->
-            <td class="player_name"><a title="TF2 Items Profile" href="http://www.tf2items.com/profiles/{$friend_id}">{$mysql_row['name']}</a></td>
-            <td class="player_count"><a title="Search by SteamID" href="/?searchCriteria=SID&SearchText={$mysql_row['steam_id']}">{$mysql_row['steam_id']}</a></td>
+            <td class="player_name"><a href="http://www.tf2items.com/profiles/{$friend_id}">{$mysql_row['name']}</a></td>
+            <td class="player_count">{$mysql_row['player_count']}</td>
             <td class="time_found">{$corrected_time}</td>
-            <td class="item_name">{$item_method}<a title="Search by Item" href="/?searchCriteria=SItem&SearchText={$mysql_row['item_name']}"><span class="quality_{$mysql_row['quality_raw_name']}">{$item_name}</span></a></td>
-            <td class="item_image"><a target="_blank" title="View on TF2 Wiki" href="http://wiki.teamfortress.com/w/index.php?search={$mysql_row['item_name']}"><img src="{$mysql_row['image_url']}" alt="Image of {$item_name}" /></a></td>
+            <td class="item_name">{$item_method}<span class="quality_{$mysql_row['quality_raw_name']}">{$item_name}</span></td>
+            <td class="item_image"><img src="{$mysql_row['image_url']}" alt="Image of {$item_name}" /> </td>
         </tr>
 EOT;
 }

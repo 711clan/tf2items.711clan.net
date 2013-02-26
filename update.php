@@ -3,10 +3,8 @@
 define('ALLOW_INCLUDE', 1);
 require 'system/includes/config.php';
 
-$TFItems_440 = json_decode(file_get_contents('http://api.steampowered.com/ITFItems_440/GetSchema/v0001/?key='.$settings['steam']['api_key'].'&format=json&language='.$settings['generic']['language']));
 
-header("Content-type: plain text");
-echo json_encode($TFItems_440);
+$TFItems_440 = json_decode(file_get_contents('http://api.steampowered.com/ITFItems_440/GetSchema/v0001/?key='.$settings['steam']['api_key'].'&format=json&language='.$settings['generic']['language']));
 
 //Update the items table.
 mysql_query('TRUNCATE `itemlogger2_items`') or die(mysql_error());
@@ -22,7 +20,7 @@ foreach($TFItems_440->result->items->item as $item_info)
     }
     else
     {
-        $items_query .= ", ($item_info->defindex, '" . mysql_real_escape_string($item_info->item_name) . "', " . (int)$item_info->proper_name . ", '" . mysql_real_escape_string($item_info->item_slot) . "', '" . mysql_real_escape_string($item_info->image_url) . "', '" . mysql_real_escape_string($item_info->craft_material_type) . "')";
+        $items_query .= ", ($item_info->defindex, '" . mysql_real_escape_string($item_info->item_name) . "', " . (int)$item_info->proper_name . ", '" . mysql_real_escape_string($item_info->item_slot) . "', '" . mysql_real_escape_string($item_info->image_url) . "', '" . mysql_real_escape_string($item_info->craft_material_type) . "')";        
     }
 }
 
